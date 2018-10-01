@@ -4,7 +4,7 @@ FROM jenkins/jenkins:2.143-alpine
 USER root
 
 RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh gettext make docker python python-dev py-pip build-base
+    apk add --no-cache bash git openssh gettext make docker python python-dev py-pip build-base && pip install c7n
     
 # Allow the jenkins user to run docker
 RUN adduser jenkins docker
